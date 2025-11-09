@@ -9,14 +9,14 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller // controller가 클라이언트의 요청을 받아 처리
 public class HelloController {
 
-    @GetMapping("hello") // localhost:8080//hello
+    @GetMapping("hello") // localhost:8080/hello
     public String hello(Model model){
         model.addAttribute("data", "hi!!");
         return "hello";
     }
 
     //MVC
-    @GetMapping("hello-mvc") // localhost:8080//hello-mvc?name:spring
+    @GetMapping("hello-mvc") // localhost:8080/hello-mvc?name:spring
     public String helloMVC(@RequestParam("name") String name, Model model){
         model.addAttribute("name", name);
         return "hello-template"; // 템플릿 엔진(thymeleaf)로 변환 후 반환
